@@ -1,0 +1,377 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.filter-greyScale {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+/* Add this to your CSS file */
+.circle-bg {
+  stroke: #e5e7eb;
+  /* Tailwind gray-200 */
+}
+
+.circle-progress {
+  stroke: #3b82f6;
+  /* Tailwind blue-500 */
+  stroke-dasharray: 283;
+  /* 2 * Math.PI * 45 */
+  /* Adjust based on the progress */
+  transition: stroke-dashoffset 0.35s;
+}
+
+.course-shadow {
+  box-shadow: 0px 1px 2px 0px #1018280d;
+}
+
+.course-card-shadow {
+  box-shadow: 0px 2px 4px -2px #1018280f;
+
+  box-shadow: 0px 4px 8px -2px #1018281a;
+}
+
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 13.13px;
+  margin-left: 10px;
+
+}
+
+/* Hide the default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: -2;
+  bottom: -2px;
+  background-color: white;
+  border: 2.5px solid black;
+  transition: 0.4s;
+  border-radius: 25px;
+}
+
+/* The slider: before (the circle) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: -8px;
+  bottom: -6px;
+  background-color: black;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Move the slider when checked */
+input:checked+.slider:before {
+  transform: translateX(25px);
+}
+
+.rangePickerDiv {
+  position: absolute;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#rangePicker {
+  position: relative;
+  z-index: 1;
+}
+
+/* Style the track of the slider */
+#rangePicker::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #80cdcf;
+  /* Default track color */
+}
+
+#rangePicker::-moz-range-track {
+  height: 4px;
+  background: #80cdcf;
+  /* Default track color */
+}
+
+#rangePicker::-ms-track {
+  height: 4px;
+  background: #80cdcf;
+  /* Default track color */
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Style the filled part of the slider (selected range) */
+#rangePicker::-webkit-slider-thumb {
+  border: 2px solid #07525c;
+  /* Thumb border color */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #07525c;
+  /* Thumb background color */
+  cursor: pointer;
+  top: -10px;
+  position: absolute;
+  /* left: calc(0% - 10px); */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+#rangePicker::-moz-range-thumb {
+  border: 2px solid #07525c;
+  /* Thumb border color */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #07525c;
+  /* Thumb background color */
+  cursor: pointer;
+  top: -10px;
+  position: absolute;
+  /* left: calc(75% - 10px); */
+}
+
+#rangePicker::-ms-thumb {
+  border: 2px solid #07525c;
+  /* Thumb border color */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #07525c;
+  /* Thumb background color */
+  cursor: pointer;
+  top: -10px;
+  position: absolute;
+  /* left: calc(75% - 10px); */
+}
+
+/* Style the filled part of the slider (selected range) */
+#rangePicker::-webkit-slider-runnable-track {
+  background: linear-gradient(to right,
+      #07525c 0%,
+      #07525c 75%,
+      #80cdcf 75%,
+      #80cdcf 100%);
+}
+
+#rangePicker::-moz-range-progress {
+  background: #07525c;
+  /* Selected range color */
+}
+
+#rangePicker::-ms-fill-lower {
+  background: #07525c;
+  /* Selected range color */
+}
+
+#rangePicker::-ms-fill-upper {
+  background: #80cdcf;
+  /* Unselected range color */
+}
+
+.rangeSelectorDiv .partition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.rangeSelectorDiv .partition:last-child {
+  align-items: flex-end;
+}
+
+.rangeSelectorDiv .partition:first-child {
+  align-items: flex-start;
+}
+
+.rangeSelectorDiv .part {
+  height: 44px;
+  width: 2px;
+  background-color: #80cdcf;
+}
+
+.rangeSelectorDiv .partition p {
+  position: absolute;
+  top: 44px;
+  color: #80cdcf;
+}
+
+.mailIconContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.mailIconContainer .mailIcon {
+  background: white;
+  width: 200px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 190px;
+  filter: drop-shadow(2px 4px 6px black);
+  position: relative;
+  overflow: hidden;
+}
+
+.mailIconContainer .mailIcon .mailIconDiv {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: mailMove 1s 1s forwards;
+  top: 50%;
+  left: 50%;
+}
+
+.mailIconContainer .mailIcon .checkIconDiv {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: checkMove 1s 1s forwards;
+  top: 150%;
+  left: 50%;
+}
+
+.mailIconContainer .mailIcon svg {
+  font-size: 90px;
+  color: #07525c;
+}
+
+.wevesentmail {
+  color: #07525c;
+}
+
+@keyframes mailMove {
+  0% {
+    top: 50%;
+  }
+
+  100% {
+    top: -150%;
+  }
+}
+
+@keyframes checkMove {
+  0% {
+    top: 150%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+.wevesentmail {
+  margin: 10px 0px 30px !important;
+}
+
+.changehead {
+  color: #07525c;
+  font-size: 20px;
+}
+
+.SubmitForget {
+  background-color: #07525c;
+  color: white;
+  padding: 13px 60px;
+  border-radius: 12px;
+}
+
+/* .rangeSelectorDiv .partition:last-child p{
+  right: 0px;
+  
+}
+.rangeSelectorDiv .partition:first-child p{
+  left: 0px;
+} */
+@media screen and (max-width: 1024px) {
+  .addCourseInput {
+    width: calc(100% - 40px) !important;
+  }
+}
+
+.addCourseInput input {
+  width: calc(100% - 40px) !important;
+}
+
+.addCourseInput {
+  width: 48% !important;
+}
+
+.addCourseInput .questionInput {
+  width: 100% !important;
+}
+
+.addCourseInput .questionInput textarea {
+  border: none;
+  font-size: 16px;
+  outline: none;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 10px;
+  width: calc(100% - 40px);
+}
+
+li::marker {
+  color: #009C9E;
+}
+
+input[type='checkbox']:after {
+  box-shadow: none !important;
+
+}
+
+input[type='checkbox'] {
+  accent-color: #009C9E;
+}
+
+.react-date-picker__wrapper {
+  border: 0 !important;
+  width: 100%;
+}
+
+/* .cursorIcon{
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  animation: moveCursor 1s infinite;
+  aniuma
+}
+.cursorIcon svg{
+  filter: drop-shadow(2px 0px 4px black);
+} 
+@keyframes moveCursor {
+  0%{
+    top: -90px;
+    left: 140px;
+  }
+  100%{
+    top: 0px;
+    left: 0px;
+  }
+} */
+
+
+#outcome .ant-tag-checkable-checked {
+  background-color: #07525C;
+}
+
+#outcome .ant-tag-checkable:not(.ant-tag-checkable-checked):hover {
+  color: #07525C;
+}

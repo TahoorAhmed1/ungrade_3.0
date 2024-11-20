@@ -1,0 +1,30 @@
+.universityListOpt{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+  }
+  .universityListOpt span{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+  .universityListOpt .location{
+    color: gray;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
+  }
+  .universityListOpt .editUni{
+    cursor: pointer;
+    font-size: 19px;
+    width: 27px;
+  }
+  .checkBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
